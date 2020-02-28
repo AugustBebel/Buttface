@@ -1,14 +1,15 @@
-# Herosaver
 
-Methodology to Save Configuration and STLs from websites using the THREE.JS framework for academic and educational purposes.
-
-Please **Always** think about the **developers** of such websites and try to **support them whenever possible**, as without them, there would be no such tools.
-
-## Usage
-### Browser Console
-  1. Go to the intended website
-  2. Open the Javascript Console [F12], then click on Console
-  3. Paste the following
+## Инструкция
+### Открываем консоль браузера
+  1. Идём на Hero Forge, загружаем персонажа
+  2. Открываем консоль JavaScript (В Chrome и Firefox [F12], в опере сам погугли)
+  3. Вставляем код снизу
+  4. Жмём Энтер и сверху на странице появятся кнопки .stl и .obj. Скачиваем .obj. Quality не трогаем, оно должно быть 0
+  5. Скачанную модель просто так запихнуть в Tabletop обычно нельзя. Придётся запихать в любой 3D редактор, Weld вершины и уменьшить количество полигонов модификатором ProOptimizer так чтобы вершин было меньше 20 000, желательно около 15 000 или типа того. (Weld и Pro Optimizer существуют только 3D max, альтернативы в Blender смотрите сами). 
+  6. Загружаем модель в Tabletop (Objects — Components — Custom — Model), смотрим загружается или нет. Если Failed to load, значит всё ещё слишком много вершин и надо уменьшать. 
+  7. Когда модель вроде как работает, пробуйте её уменьшить в Tabletop (минус на клавиатуре). Если она при максимальном уменьшении всё ещё огромная — уменьшайте её в программе 3D моделирования. Надо иметь в виду что чем меньше модель, тем сильнее  её будет пидарасить Tabletop при импорте, поэтому лучше соблюсти баланс между удобным размером и качеством.
+  8. Наконец, делаем коллайдер. Ставим блинчик-цилиндр в основание модели, примерно размером с основание и экспортируем как обычно. Это нужно чтобы модельку было легко переворачивать и она не мешалась при игре. 
+  9. Усё.
 
 ```
 var xhr=new XMLHttpRequest;xhr.open("get","https://raw.githubusercontent.com/TeaWithLucas/Herosaver/master/dist/saver.min.js",true);xhr.onreadystatechange=function(){if(xhr.readyState==4){var script=document.createElement("script");script.type="text/javascript";script.text=xhr.responseText;document.body.appendChild(script)}};xhr.send(null);
