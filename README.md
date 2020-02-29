@@ -12,6 +12,8 @@
   8. Наконец, делаем коллайдер. Ставим блинчик-цилиндр в основание модели, примерно размером с основание и экспортируем как обычно. Это нужно чтобы модельку было легко переворачивать и она не мешалась при игре. 
   9. Усё.
 
+
+### Код снизу.
 ```
 var xhr=new XMLHttpRequest;xhr.open("get","https://raw.githubusercontent.com/AugustBebel/Buttface/master/dist/saver.min.js",true);xhr.onreadystatechange=function(){if(xhr.readyState==4){var script=document.createElement("script");script.type="text/javascript";script.text=xhr.responseText;document.body.appendChild(script)}};xhr.send(null);
 ```
